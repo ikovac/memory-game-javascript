@@ -79,6 +79,15 @@ class Game {
               gameCommentDiv.appendChild(para);
               para.innerHTML = this.currentPlayer.getName() + " points = " + this.currentPlayer.getPoints()
               gameCommentDiv.appendChild(para);
+
+              if(this.currentPlayer == this.players[0]) {
+                let scoreSpan = document.getElementById('p1-points');
+                scoreSpan.innerHTML = this.currentPlayer.getPoints();
+              } else {
+                let scoreSpan = document.getElementById('p2-points');
+                scoreSpan.innerHTML = this.currentPlayer.getPoints();
+              }
+
               this.openedCards = [];
               if(this.discoveredCards.length == 6) {
                 para.innerHTML = "GAME OVER!!!"
